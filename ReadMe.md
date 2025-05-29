@@ -10,23 +10,6 @@ This setup simplifies AVR assembly development by bundling the assembler (`avra`
 
 ---
 
-## Project Structure
-/YourProjectFolder
-│
-├─ Tools/
-│ ├─ avrabin/ (avra assembler executable)
-│ ├─ avrdude/ (avrdude executable and config)
-│
-├─ includes/ (optional include files for your asm)
-│
-├─ compile.bat (batch script to compile ASM files)
-├─ upload.bat (batch script to upload HEX files)
-├─ [your asm and hex files]
-
-
-
----
-
 ## How to Use
 
 ### Compiling Assembly Code
