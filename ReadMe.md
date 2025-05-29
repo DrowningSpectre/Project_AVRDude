@@ -10,6 +10,7 @@ This setup simplifies AVR assembly development by bundling the assembler (`avra`
 
 ---
 
+<<<<<<< HEAD
 ## License
 
 This project is released under the MIT License.
@@ -18,6 +19,8 @@ Included tools (`avra`, `avrdude`) are third-party software and distributed unde
 
 ---
 
+=======
+>>>>>>> 49fa8a37c13b8fed2bc6df35ab9c8d177de069a4
 ## How to Use
 
 ### Compiling Assembly Code
