@@ -85,24 +85,22 @@ This project setup allows seamless AVR assembly development with minimal configu
 
 
 
+---
 
 
 
+## **Tool-Description:**
 
 
-
-**Tool-Description:**
-
-
-# AVRA Assembly Compiler:  
+## AVRA Assembly Compiler:  
 
     avra -Options
 
-## Command Example:
+### Command Example:
 
   *avra main.asm segm1.asm -I includes/ -o output.hex -f ihex*
 
-### Options:
+#### Options:
 
    1. -l: Creates a listing file with the extension .lst, containing the assembler code, its addresses, and the generated machine instructions.
 
@@ -138,15 +136,11 @@ This project setup allows seamless AVR assembly development with minimal configu
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-# AVRDUDE Upload:
+## AVRDUDE Upload:
 
         avrdude -Options
 
-## Command Example:
-
-   *avrdude -c avrispmkii -B16 -p attiny85 -u -B %clk -C C:\Programming\avrdude-v7.2-windows-x64\avrdude.conf -p Attiny85 -P usb -c avrispmkii -U flash:w:"%hex":a*
-
-### Options:
+#### Options:
     
    1. avrdude: The main command to run Avrdude.
 
@@ -166,22 +160,3 @@ This project setup allows seamless AVR assembly development with minimal configu
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-# MyDefaultOptions:
-
-## Upload:
-
-    avrdude -c avrispmkii -B16 -p attiny85 -u -B %clk -C C:\Programming\avrdude-v7.2-windows-x64\avrdude.conf -p Attiny85 -P usb -c avrispmkii -U flash:w:"%hex":a
-
-## VisualCode Upload:
-        
-    avrdude -p attiny85 -c avrispmkii -b 57600 -P usb -U flash:w:hello.hex
-
-## Compile with avra:
-        
-    avra file.asm -I includes/
-
-## Compile with avrasm2 for AtmelStudio:
-        
-    avrasm2 file.asm -I includes/
