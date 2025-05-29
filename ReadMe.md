@@ -22,21 +22,34 @@ Included tools (`avra`, `avrdude`) are third-party software and distributed unde
 
 ### Compiling Assembly Code
 
+To compile an assembly file, run: 
+
+`compile.bat filename.asm`
+
+
 - Run the compile script with the assembly filename as parameter:
 - This calls `avra` from the project `Tools` folder and uses the local `includes` directory for include files.
 - The output hex file will be generated in the same folder.
 
+
+
 ### Uploading to the AVR Microcontroller
 
-- Run the upload script with the hex filename as parameter:
+To upload an hex file with default parameters, run:
 
-- Optional parameters allow you to specify:
+`upload.bat filename.hex`
+
+#### *Optional parameters allow you to specify:*
+
 - Programmer (default: `avrispmkii`)
 - Chip type (default: `attiny85`)
 - Port (default: `usb`)
 - Baud rate (default: `57600`)
 
-- Example with all parameters:
+To upload an hex file with parameters, run:
+
+`upload.bat filename.hex [programmer] [chip] [port] [baud]`
+
 - The upload script calls `avrdude` from the project `Tools` folder, ensuring portability.
 
 ---
@@ -66,7 +79,8 @@ This project setup allows seamless AVR assembly development with minimal configu
 
 ---
 
-*Happy AVR programming anywhere you go!*
+
+## *Happy AVR programming anywhere you go!*
 
 
 
