@@ -133,7 +133,7 @@ This setup provides a **complete AVR assembly development environment** with zer
 
 #### Command Example:
 
-  *avra main.asm segm1.asm -I includes/ -o output.hex -f ihex*
+    avra main.asm segm1.asm -I includes/ -o output.hex -f ihex
 
 #### Options:
 
