@@ -184,13 +184,13 @@ This setup provides a **complete AVR assembly development environment** with zer
    2. `-c avrispmkii`: Selects the programmer used for communication with the AVR chip. In this case, "avrispmkii," a common AVR programmer.
       arduino
 
-                     avrdude -c ?    \\to list all supported programmer devices.
+          avrdude -c ?    \\to list all supported programmer devices.
 
    4. `-B16`: Sets the bit rate for serial communication with the AVR chip to 16. The B stands for "baud rate."
 
    5. `-p` attiny85: Selects the specific AVR chip to be accessed. In this case, the ATtiny85.
 
-                     avrdude -p ?   \\to list all supported devices.
+          avrdude -p ?   \\to list all supported devices.
 
    7. `-U flash:w:"%hex":a`: The main command to write firmware (hex file) to the AVR chip. flash:w: means writing to the chip’s flash memory. %hex is the path to the hex file. The :a at the end means the file is transferred in ASCII mode.
 
@@ -200,5 +200,5 @@ This setup provides a **complete AVR assembly development environment** with zer
 
    10. `-P usb`: Specifies the communication port for the programmer. Here, it is the USB port.
 
-                      avrdude -P ?    \\lists all available ports, such as USB, COM, or serial interfaces.
+           avrdude -P ?    \\lists all available ports, such as USB, COM, or serial interfaces.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
