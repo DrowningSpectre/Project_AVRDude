@@ -1,4 +1,4 @@
-# Portable AVR Assembly Project Setup
+# 🔧 Portable AVR Assembly Project Setup
 
 This project provides a portable environment for compiling and uploading AVR assembly code using batch scripts. All necessary tools are included within the project folder, making it fully portable and usable from any location — including USB sticks.
 
@@ -6,7 +6,7 @@ This project provides a portable environment for compiling and uploading AVR ass
 
 <br>
 
-## Introduction
+## 🚀 Introduction
 
 This setup simplifies AVR assembly development by bundling the assembler (`avra`) and uploader (`avrdude`) tools alongside scripts that automate compiling and flashing your code. You only need to provide the source or hex filename; all configurations and paths are handled internally.
 
@@ -81,7 +81,7 @@ This setup simplifies AVR assembly development by bundling the assembler (`avra`
 
 <br>
 
-## ✅ Features
+## 🎯 Features
 
 - **Portable:** All tools reside inside the project folder; no external installs needed.
 - **Configurable:** Upload script supports override of programmer, chip, port, and baudrate.
@@ -93,7 +93,7 @@ This setup simplifies AVR assembly development by bundling the assembler (`avra`
 
 <br>
 
-## ✅ Tips
+## 💡 Tips
 
 - Make sure your programmer is connected and the correct port is selected before uploading.
 - Keep your source `.asm` files and includes organized inside the project folder.
@@ -127,7 +127,7 @@ This setup provides a **complete AVR assembly development environment** with zer
 
 <br>
 
-## AVRA Assembly Compiler:  
+## 🔨 AVRA Assembly Compiler:  
 
     avra -Options
 
@@ -172,7 +172,7 @@ This setup provides a **complete AVR assembly development environment** with zer
 
 <br>
 
-## AVRDUDE Upload:
+## 📡 AVRDUDE Upload:
 
         avrdude -Options
 
