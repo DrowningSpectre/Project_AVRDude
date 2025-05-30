@@ -62,6 +62,7 @@ This setup simplifies AVR assembly development by bundling the assembler (`avra`
 | `usbasp`
 | `usbtiny`
 | `avrisp`
+| `avrispmkii`
 | `stk500`
 | `jtag2`
 | `dragon_isp` |
@@ -137,35 +138,35 @@ This setup provides a **complete AVR assembly development environment** with zer
 
 #### Options:
 
-   1. -l: Creates a listing file with the extension .lst, containing the assembler code, its addresses, and the generated machine instructions.
+   1. `-l`: Creates a listing file with the extension .lst, containing the assembler code, its addresses, and the generated machine instructions.
 
-   2. -m: Creates a file with macro definitions and references.
+   2. `-m`: Creates a file with macro definitions and references.
 
-   3. -e: Creates a file with the symbol table.
+   3. `-e`: Creates a file with the symbol table.
 
-   4. -P: Allows setting the processor used. For example, -P attiny85 for the ATtiny85.
+   4. `-P`: Allows setting the processor used. For example, -P attiny85 for the ATtiny85.
 
-   5. -d: Enables debug mode.
+   5. `-d`: Enables debug mode.
 
-   6. -f: Allows setting the output format, such as Intel Hex or raw binary.
+   6. `-f`: Allows setting the output format, such as Intel Hex or raw binary.
 
-   7. -O: Optimizes the assembler output.
+   7. `-O`: Optimizes the assembler output.
 
-   8. -D: Defines macros before starting the assembler.
+   8. `-D`: Defines macros before starting the assembler.
 
-   9. -I: Adds a directory to the search path for include files.
+   9. `-I`: Adds a directory to the search path for include files.
 
-   10. -N: Suppresses warnings.
+   10. `-N`: Suppresses warnings.
 
-   11. -o: Sets the name of the output file.
+   11. `-o`: Sets the name of the output file.
 
-   12. -H: Enables the use of hexadecimal numbers in the source code.
+   12. `-H`: Enables the use of hexadecimal numbers in the source code.
 
-   13. -x: Enables support for Atmel XMEGA processors.
+   13. `-x`: Enables support for Atmel XMEGA processors.
 
-   14. -V: Displays the assembler version.
+   14. `-V`: Displays the assembler version.
 
-   15. -h: Displays a help message explaining available options and their usage.
+   15. `-h`: Displays a help message explaining available options and their usage.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -180,48 +181,24 @@ This setup provides a **complete AVR assembly development environment** with zer
     
    1. avrdude: The main command to run Avrdude.
 
-   2. -c avrispmkii: Selects the programmer used for communication with the AVR chip. In this case, "avrispmkii," a common AVR programmer.
+   2. `-c avrispmkii`: Selects the programmer used for communication with the AVR chip. In this case, "avrispmkii," a common AVR programmer.
       arduino
 
-                   avrdude -c ?    \\to list all supported programmer devices.
+                     avrdude -c ?    \\to list all supported programmer devices.
 
-      Programmers Examples:
-        
-        - usbasp
-        - usbtiny
-        - avrisp
-        - avrispmkII
-        - stk500
-        - jtag2
-        - dragon_isp
-        - buspirate
-        - ftdi_syncbb
-        - linuxspi
+   4. `-B16`: Sets the bit rate for serial communication with the AVR chip to 16. The B stands for "baud rate."
 
-   4. -B16: Sets the bit rate for serial communication with the AVR chip to 16. The B stands for "baud rate."
-
-   5. -p attiny85: Selects the specific AVR chip to be accessed. In this case, the ATtiny85.
+   5. `-p` attiny85: Selects the specific AVR chip to be accessed. In this case, the ATtiny85.
 
                      avrdude -p ?   \\to list all supported devices.
 
-      Device Examples:
-      
-        - attiny13
-        - attiny85
-        - atmega8
-        - atmega328p
-        - atmega2560
-        - atxmega128a1
+   7. `-U flash:w:"%hex":a`: The main command to write firmware (hex file) to the AVR chip. flash:w: means writing to the chip’s flash memory. %hex is the path to the hex file. The :a at the end means the file is transferred in ASCII mode.
 
-   7. -U flash:w:"%hex":a: The main command to write firmware (hex file) to the AVR chip. flash:w: means writing to the chip’s flash memory. %hex is the path to the hex file. The :a at the end means the file is transferred in ASCII mode.
+   8. `-B %clk`: Dynamically adjusts the serial communication bit rate according to the chip clock frequency. %clk stands for the chip clock.
 
-   8. -B %clk: Dynamically adjusts the serial communication bit rate according to the chip clock frequency. %clk stands for the chip clock.
+   9. `-C C:\Programming\avrdude-v7.2-windows-x64\avrdude.conf`: Specifies the configuration file for Avrdude. This file contains various settings and configurations.
 
-   9. -C C:\Programming\avrdude-v7.2-windows-x64\avrdude.conf: Specifies the configuration file for Avrdude. This file contains various settings and configurations.
+   10. `-P usb`: Specifies the communication port for the programmer. Here, it is the USB port.
 
-   10. -P usb: Specifies the communication port for the programmer. Here, it is the USB port.
-
-                    avrdude -P ?    \\lists all available ports, such as USB, COM, or serial interfaces.
-
-
+                      avrdude -P ?    \\lists all available ports, such as USB, COM, or serial interfaces.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
