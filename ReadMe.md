@@ -24,7 +24,7 @@ Included tools (`avra`, `avrdude`) are third-party software and distributed unde
 
 To compile an assembly file, run: 
 
-`compile.bat filename.asm`
+     compile.bat filename.asm
 
 
 - Run the compile script with the assembly filename as parameter:
@@ -37,7 +37,7 @@ To compile an assembly file, run:
 
 To upload an hex file with default parameters, run:
 
-`upload.bat filename.hex`
+    upload.bat filename.hex
 
 #### *Optional parameters allow you to specify:*
 
@@ -48,7 +48,7 @@ To upload an hex file with default parameters, run:
 
 To upload an hex file with parameters, run:
 
-`upload.bat filename.hex [programmer] [chip] [port] [baud]`
+    upload.bat filename.hex [programmer] [chip] [port] [baud]
 
 - The upload script calls `avrdude` from the project `Tools` folder, ensuring portability.
 
@@ -145,18 +145,47 @@ This project setup allows seamless AVR assembly development with minimal configu
    1. avrdude: The main command to run Avrdude.
 
    2. -c avrispmkii: Selects the programmer used for communication with the AVR chip. In this case, "avrispmkii," a common AVR programmer.
+      arduino
 
-   3. -B16: Sets the bit rate for serial communication with the AVR chip to 16. The B stands for "baud rate."
+                   avrdude -c ?    \\to list all supported programmer devices.
 
-   4. -p attiny85: Selects the specific AVR chip to be accessed. In this case, the ATtiny85.
+      Programmers Examples:
+        
+        - usbasp
+        - usbtiny
+        - avrisp
+        - avrispmkII
+        - stk500
+        - jtag2
+        - dragon_isp
+        - buspirate
+        - ftdi_syncbb
+        - linuxspi
 
-   5. -U flash:w:"%hex":a: The main command to write firmware (hex file) to the AVR chip. flash:w: means writing to the chip’s flash memory. %hex is the path to the hex file. The :a at the end means the file is transferred in ASCII mode.
+   4. -B16: Sets the bit rate for serial communication with the AVR chip to 16. The B stands for "baud rate."
 
-   6. -B %clk: Dynamically adjusts the serial communication bit rate according to the chip clock frequency. %clk stands for the chip clock.
+   5. -p attiny85: Selects the specific AVR chip to be accessed. In this case, the ATtiny85.
 
-   7. -C C:\Programming\avrdude-v7.2-windows-x64\avrdude.conf: Specifies the configuration file for Avrdude. This file contains various settings and configurations.
+                     avrdude -p ?   \\to list all supported devices.
 
-   8. -P usb: Specifies the communication port for the programmer. Here, it is the USB port.
+      Device Examples:
+      
+        - attiny13
+        - attiny85
+        - atmega8
+        - atmega328p
+        - atmega2560
+        - atxmega128a1
+
+   7. -U flash:w:"%hex":a: The main command to write firmware (hex file) to the AVR chip. flash:w: means writing to the chip’s flash memory. %hex is the path to the hex file. The :a at the end means the file is transferred in ASCII mode.
+
+   8. -B %clk: Dynamically adjusts the serial communication bit rate according to the chip clock frequency. %clk stands for the chip clock.
+
+   9. -C C:\Programming\avrdude-v7.2-windows-x64\avrdude.conf: Specifies the configuration file for Avrdude. This file contains various settings and configurations.
+
+   10. -P usb: Specifies the communication port for the programmer. Here, it is the USB port.
+
+                    avrdude -P ?    \\lists all available ports, such as USB, COM, or serial interfaces.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
