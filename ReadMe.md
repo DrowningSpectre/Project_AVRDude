@@ -196,7 +196,7 @@ This setup provides a **complete AVR assembly development environment** with zer
 
    8. `-B %clk`: Dynamically adjusts the serial communication bit rate according to the chip clock frequency. %clk stands for the chip clock.
 
-   9. `-C C:\Programming\avrdude-v7.2-windows-x64\avrdude.conf`: Specifies the configuration file for Avrdude. This file contains various settings and configurations.
+   9. `-C Tools\avrdude\avrdude.conf`: Specifies the configuration file for Avrdude. This file contains various settings and configurations.
 
    10. `-P usb`: Specifies the communication port for the programmer. Here, it is the USB port.
 
